@@ -41,8 +41,8 @@ To build tools to support the identification and analysis of participatory pract
 
 These tools currently include Python scripts:
 
-- **[apa-bib-export](script/apa-bib-export)** – a shell wrapper that reads a `.bib` file and produces APA-style bibliographies in Markdown or html.
-- **[txt-participative-check](script/txt-participative-check)** –  a shell wrapper that scans PDFs (or a corpus defined in a `.bib` file) for **participatory research keywords** and outputs a structured text report.
+- **[apa-bib-export](scripts/apa-bib-export)** – a shell wrapper that reads a `.bib` file and produces APA-style bibliographies in Markdown or html.
+- **[txt-participative-check](scripts/txt-participative-check)** –  a shell wrapper that scans PDFs (or a corpus defined in a `.bib` file) for **participatory research keywords** and outputs a structured text report.
 
 ### 3. Creating Analytic Frameworks for Participation
 
