@@ -1,0 +1,19 @@
+# Folders to ignore
+corpus/jabref/*
+!corpus/jabref/*.bib
+!corpus/jabref/*.md
+
+methodology/jabref/*
+!methodology/jabref/*.bib
+!methodology/jabref/*.md
+!methodology/jabref/Export/
+!methodology/jabref/Export/*.md
+
+# Temporary files
+*.log
+*.aux
+*.tmp
+*.bak
+
+# Unnecessary macOS files
+.DS_Store
