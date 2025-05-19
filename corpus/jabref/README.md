@@ -84,6 +84,8 @@ The project begins with a corpus of publications funded by (or authored by resea
 **Objective:** Quantify the share of studies incorporating active autistic participation, using the `Participation` group in the `.bib` file.  
 This analysis is yet to be carried out and will be conducted in a transparent and fully documented manner.
 
+A markdown list of all references in this corpus—automatically generated from the latest `.bib` file via the `apa-bib-export` script—can be found here: [corpus_autism_research_list.md](../../corpus/jabref/Export/corpus_autism_research_list.md)
+
 ---
 
 ## 6 ▪ Interacting via Python Scripts *(to&nbsp;do)*
