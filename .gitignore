@@ -2,6 +2,8 @@
 corpus/jabref/*
 !corpus/jabref/*.bib
 !corpus/jabref/*.md
+!corpus/jabref/Export
+!corpus/jabref/Export/*.md
 
 methodology/jabref/*
 !methodology/jabref/*.bib
