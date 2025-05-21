@@ -73,7 +73,7 @@ The project begins with a corpus of publications funded by (or authored by resea
 
 ### Inclusion criteria *(initial version)*  
 - Studies **listed on the “Publications” page** of the official consortium website ([archived snapshot](<https://web.archive.org/web/20250501093805/https://www.aims-2-trials.eu/news/publications/>)).  
-- Additional records retrieved through a structured search on [Europe PMC](<https://europepmc.org>).
+- Additional records retrieved through a structured search on [Europe PMC](<https://europepmc.org>) and [Dimensions](<https://app.dimensions.ai>).
 
 ### Exclusion criteria *(initial version)*  
 - Articles that **do not explicitly mention the consortium**—either by name or grant identifier—in their funding (or equivalent) section.  
