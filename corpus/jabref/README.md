@@ -116,4 +116,20 @@ Contributions—such as additional references, group corrections, or metadata im
 
 ---
 
-*Last updated: 15 May 2025*
+
+## 8 ▪ Licensing and Fair Use
+
+- This .bib file **does not contain full articles**.
+- Only **funding acknowledgement excerpts** are included — these are:
+  - factual in nature,
+  - quoted with attribution to their original source (via DOI or publisher link).
+- The content is reproduced for **non-commercial, academic and documentation purposes only**.
+
+> All rights to the original publications remain with their respective authors and publishers.
+
+If you use this data in your work, please cite this repository and include attribution to the original sources via the DOIs provided in each BibTeX entry.
+
+The inclusion of a publication in this dataset **does not imply any endorsement by the AIMS-2-TRIALS programme or its funders**. This is an independent documentation effort.
+
+
+*Last updated: 25 May 2025*
