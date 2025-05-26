@@ -1,3 +1,11 @@
+> **⚠️ Preliminary Note**
+>
+> This `.bib` file is **under active development** and subject to **significant changes** as part of ongoing preliminary analyses.  
+> It does **not** represent a finalized or validated working version and should **not be used** for citation, extraction, or production purposes at this stage.  
+>
+> Please wait for a stable release or contact the project maintainer if you have questions.
+
+
 ## 1 ▪ Purpose of the `.bib` File
 
 This file consolidates **all publicly accessible bibliographic data** used to build the corpora analysed in the **Autistic Participatory Metrics** project.  
@@ -127,9 +135,9 @@ Contributions—such as additional references, group corrections, or metadata im
 
 > All rights to the original publications remain with their respective authors and publishers.
 
-If you use this data in your work, please cite this repository and include attribution to the original sources via the DOIs provided in each BibTeX entry.
+If you use this data in your work, please include attribution to the original sources via the DOIs provided in each BibTeX entry.
 
 The inclusion of a publication in this dataset **does not imply any endorsement by the AIMS-2-TRIALS programme or its funders**. This is an independent documentation effort.
 
 
-*Last updated: 25 May 2025*
+*Last updated: 26 May 2025*
