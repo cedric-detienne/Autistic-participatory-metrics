@@ -39,7 +39,7 @@ State the primary objectives or questions the corpus will address.
 ### Eligibility criteria – Item 5
 
 Specify inclusion and exclusion rules (e.g. declared A2T funding, publication types, years) and how studies will be grouped.
-→
+→ Included articles were peer-reviwed published papers funded by AIMS-2-TRIALS. 
 
 ### Information sources – Item 6 (PRISMA‑S 1–4 & BIBLIO 8)
 
