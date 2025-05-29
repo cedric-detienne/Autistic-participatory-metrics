@@ -59,7 +59,7 @@ The primary objective is to systematically identify and analyse how participatio
 ### **Exclusion criteria**
 – Editorials, commentaries, letters, opinion pieces, perspectives, conference abstracts, corrigenda, and other non-substantive notices.  
 – Articles that only mention autism superficially, without it being a central focus of the research.  
-– Preprints that have since been published in a peer-reviewed journal (to avoid duplication).
+– Preprints or PhD thesis that have since been published in a peer-reviewed journal (to avoid duplication).
 
 
 
