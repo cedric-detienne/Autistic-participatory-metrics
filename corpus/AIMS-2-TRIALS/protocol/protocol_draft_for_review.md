@@ -1,12 +1,17 @@
 # Protocol – *Draft for Review*  #
 
 **Study:** *Autistic Participation Reporting in Autism Research Articles Funded by AIMS-2-TRIALS: A Corpus Analysis Informed by GRIPP2-LF*  
-**Version:** 0.1 – *Draft under review by research collaborators*  
-**Date:** 2025-05-28  
+**Version:** 0.2 – *Draft under review by research collaborators*  
+**Date:** 2025-05-29 
 
 *This protocol is a preliminary draft. It is intended for collaborative feedback and discussion among project participants and may be modified or restructured based on collective input.*
 
 *The structure and implementation of this protocol may be adapted based on the number of coders and reviewers available to participate in this study, in order to ensure feasibility while maintaining methodological transparency.*
+
+---
+# PRISMA Flow Diagram (Draft 0.1) #
+
+![PRISMA Flow Diagram (Draft 0.1)](prisma_diagram/prisma_diagram.svg)
 
 ---
 
