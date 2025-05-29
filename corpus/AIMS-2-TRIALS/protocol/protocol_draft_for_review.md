@@ -12,9 +12,7 @@
 # PRISMA Flow Diagram (Draft 0.1) #
 
 This diagram visualizes **Phase A – Corpus-Building** (see below) using a PRISMA-style flow.  
-It was created in **Graphviz** and is available in the repository:  
-[prisma_diagram/prisma_diagram.dot](./prisma_diagram/prisma_diagram.dot)
-
+It was created using the **Graphviz DOT language** and is [available in the repository](./prisma_diagram/prisma_diagram.dot).
 
 ![PRISMA Flow Diagram (Draft 0.1)](prisma_diagram/prisma_diagram.svg)
 
