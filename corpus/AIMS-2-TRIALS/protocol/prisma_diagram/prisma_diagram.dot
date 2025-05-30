@@ -1,38 +1,60 @@
-digraph PRISMA {
-  rankdir = TB
+digraph PRISMA2020 {
+  /* ── Global settings ─────────────────────────────────────────────── */
+  rankdir = TB                           // Top-to-bottom layout
   labelloc = "t"
   label = "PRISMA Flow Diagram (Draft 0.3)"
   fontsize = 16
   fontname = "Helvetica-Bold"
-  nodesep = 0.25
+
+  nodesep = 0.5
   ranksep = 0.35
-  node [shape=box, fontname="Helvetica", fontsize=10, style=filled]
+
+  node [shape=box, fontname="Helvetica", fontsize=10, style=filled, width=2]
   edge [color=gray40]
 
-  /* — Sources — */
-  subgraph cluster_sources {
-    label = ""
-    rank = same
-    S1 [label="Dimensions search\n(n=…)",    width=2, fillcolor="#fff8e1", color="#fbc02d"];
-    S2 [label="Europe PMC search\n(n=…)",    width=2, fillcolor="#fff8e1", color="#fbc02d"];
-    S3 [label="CORDIS records\n(n=…)",       width=2, fillcolor="#fff8e1", color="#fbc02d"];
-    S4 [label="Project-site records\n(n=…)", width=2, fillcolor="#fff8e1", color="#fbc02d"];
-  }
+  /* ── Nodes — sources and flow ────────────────────────────────────── */
+  // Yellow box: record identification
+  R1 [label="Records identified from:\l- Dimensions (n = …)\l- Europe PMC (n = …)\l- A2T Website (n = …)\l- Cordis Website (n = …)\l", fillcolor="#fff8e1", color="#fbc02d"];
 
-  /* — Datasets — */
-  D1 [label="Dataset 1: distinct records\n(n=…)", width=2, fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
-  D2 [label="Dataset 2: final corpus\n(n=…)",    width=2, fillcolor="#e8f5e9", color="#2e7d32"];
+  // Green boxes: progression
+  R2 [label="Records screened\n(n = …)", fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
+  R3 [label="Eligibility review\n(n = …)", fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
+  R4 [label="Articles included in review\n(n = …)", fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
 
-  /* — Exclusions — */
-  X1  [label="Exclude: No autism terms\n(n=…)",             width=2, fillcolor="#ffebee", color="#c62828"];
-  X2  [label="Exclude: Duplicate preprint\n(n=…)",          width=2, fillcolor="#ffebee", color="#c62828"];
-  X3  [label="Exclude: Not English\n(n=…)",                 width=2, fillcolor="#ffebee", color="#c62828"];
-  X4  [label="Exclude: Not autism-related\n(n=…)",          width=2, fillcolor="#ffebee", color="#c62828"];
-  X5  [label="Exclude: A2T only in text/refs\n(n=…)",       width=2, fillcolor="#ffebee", color="#c62828"];
-  XF1 [label="Exclude: A2T funding not explicit\n(n=…)",    width=2, fillcolor="#ffebee", color="#c62828"];
+  /* ── Exclusion notes (right) ─────────────────────────────────────── */
+  Dup  [label="Duplicates removed\n(n = …)", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
+  Xscr [label="Excluded:\l- No autism terms (n = …)\l- Duplicate preprint (n = …)\l- Not English (n = …)\l- Not autism-related (n = …)\l(n = …)", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
+  Xelig [label="Excluded:\l- A2T only in text/refs  (n = …)\l- A2T funding unclear (n = …)\l(n = …)", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
 
-  /* — Flux — */
-  S1 -> D1;  S2 -> D1;  S3 -> D1;  S4 -> D1;
-  D1 -> X1 -> X2 -> X3 -> X4 -> X5 -> XF1 -> D2;
+  /* ── Phase labels (left, blue) ───────────────────────────────────── */
+  node [shape=plaintext, fontname="Helvetica", fontsize=12,
+        fillcolor="#bbdefb", style="rounded,filled", color="#0d47a1", fontcolor="#0d47a1"]
+  L1 [label="Identification"];
+  L2 [label="Screening"];
+  L3 [label="Included"];
+
+  L1 -> L2
+  L2 -> L3
+
+  /* ── Alignment ───────────────────────────────────────────────────── */
+  { rank=same; L1; R1; Dup }
+  { rank=same; L2; R2; Xscr }
+  { rank=same; R3; Xelig }
+  { rank=same; L3; R4 }
+
+  /* ── Flow arrows ─────────────────────────────────────────────────── */
+  R1 -> R2
+  R2 -> R3
+  R3 -> R4
+
+  /* Invisible edges for alignment */
+R1:e -> Dup:w
+R2:e -> Xscr:w
+R3:e -> Xelig:w
+
+  L1 -> R1 [style=invis]
+  L2 -> R2 [style=invis]
+  L3 -> R4 [style=invis]
+
 
 }
