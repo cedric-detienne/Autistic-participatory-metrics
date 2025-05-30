@@ -60,8 +60,7 @@ The first case study focuses on **peer-reviewed publications** stemming from res
 
 The project is currently in the phase of developing a methodological protocol. A draft is available for consultation: [protocol_draft_for_review.md](corpus/AIMS-2-TRIALS/protocol/protocol_draft_for_review.md).
 
-The evaluation is conducted entirely independently from the consortium, on a voluntary basis by individuals organizing through Discord.
-Anyone interested in contributing is welcome to join: [https://discord.gg/9uk3cCyR9e](https://discord.gg/9uk3cCyR9e)
+The evaluation is conducted entirely independently from the consortium, on a voluntary basis by individuals organizing through Discord. Anyone interested in contributing is welcome to join.
 
 ## License and Contribution
 
