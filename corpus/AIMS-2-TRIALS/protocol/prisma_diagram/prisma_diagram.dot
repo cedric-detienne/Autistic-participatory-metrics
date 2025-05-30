@@ -1,61 +1,38 @@
 digraph PRISMA {
-  /* ─── 1. Paramètres généraux ─────────────────────────── */
-  rankdir=TB
+  rankdir = TB
   labelloc = "t"
-  label    = "PRISMA Flow Diagram (Draft 0.1)"
-  fontsize  = 16
-  fontname  = "Helvetica-Bold"
+  label = "PRISMA Flow Diagram (Draft 0.3)"
+  fontsize = 16
+  fontname = "Helvetica-Bold"
+  nodesep = 0.25
+  ranksep = 0.35
   node [shape=box, fontname="Helvetica", fontsize=10, style=filled]
   edge [color=gray40]
 
-  /* ─── 2. Nœuds principaux ─────────────────────────────── */
-  A1 [label="Dimensions search\n\n(n=…)", width=2,  fillcolor="#fff8e1", color="#fbc02d"];
-  B6 [label="After full-text exclusions\n\n(n=…)", width=2, fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
-  C1 [label="Europe PMC search\n\n(n=…)", width=2, fillcolor="#fff8e1", color="#fbc02d"];
-  C2 [label="CORDIS records\n\n(n=…)", width=2, fillcolor="#fff8e1", color="#fbc02d"];
-  C3 [label="Project website records\n\n(n=…)", width=2, fillcolor="#fff8e1", color="#fbc02d"];
-  C4 [label="Excluded: duplicates / irrelevant\n\n(n=…)", width=2, fillcolor="#ffebee", color="#c62828"];
-  C5 [label="Merged dataset\n\n(n=…)", width=2, fillcolor="#e8f5e9", color="#2e7d32"];
-  D3 [label="Final included corpus\n\n(n=…)", width=2, fillcolor="#e8f5e9", color="#2e7d32"];
-
-  /* ─── 3. Full-text exclusions ─────────────────────────── */
-  subgraph FT {
-
-    B1 [label="Excluded: no autism terms\n(title/abstract)\n(n=…)", width=2, fillcolor="#ffebee", color="#c62828"];
-    B2 [label="Excluded: not autism-related\n\n(n=…)", width=2, fillcolor="#ffebee", color="#c62828"];
-    B3 [label="Excluded: not English\n\n(n=…)", width=2, fillcolor="#ffebee", color="#c62828"];
-    B4 [label="Excluded: duplicate preprint\n\n(n=…)", width=2, fillcolor="#ffebee", color="#c62828"];
-    B5 [label="Excluded: no acknowledge/\nfunding section\n(n=…)", width=2, fillcolor="#ffebee", color="#c62828"];
-
-    B1 -> B2 -> B3 -> B4 -> B5
+  /* — Sources — */
+  subgraph cluster_sources {
+    label = ""
+    rank = same
+    S1 [label="Dimensions search\n(n=…)",    width=2, fillcolor="#fff8e1", color="#fbc02d"];
+    S2 [label="Europe PMC search\n(n=…)",    width=2, fillcolor="#fff8e1", color="#fbc02d"];
+    S3 [label="CORDIS records\n(n=…)",       width=2, fillcolor="#fff8e1", color="#fbc02d"];
+    S4 [label="Project-site records\n(n=…)", width=2, fillcolor="#fff8e1", color="#fbc02d"];
   }
 
-  /* ─── 4. Funding exclusions ───────────────────────────── */
-  subgraph FE {
+  /* — Datasets — */
+  D1 [label="Dataset 1: distinct records\n(n=…)", width=2, fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
+  D2 [label="Dataset 2: final corpus\n(n=…)",    width=2, fillcolor="#e8f5e9", color="#2e7d32"];
 
-    D1 [label="Excluded: not funded by A2T\n\n(n=…)", width=2, fillcolor="#ffebee", color="#c62828"];
-    D2 [label="Excluded: ambiguous support\n\n(n=…)", width=2, fillcolor="#ffebee", color="#c62828"];
+  /* — Exclusions — */
+  X1  [label="Exclude: No autism terms\n(n=…)",             width=2, fillcolor="#ffebee", color="#c62828"];
+  X2  [label="Exclude: Duplicate preprint\n(n=…)",          width=2, fillcolor="#ffebee", color="#c62828"];
+  X3  [label="Exclude: Not English\n(n=…)",                 width=2, fillcolor="#ffebee", color="#c62828"];
+  X4  [label="Exclude: Not autism-related\n(n=…)",          width=2, fillcolor="#ffebee", color="#c62828"];
+  X5  [label="Exclude: A2T only in text/refs\n(n=…)",       width=2, fillcolor="#ffebee", color="#c62828"];
+  XF1 [label="Exclude: A2T funding not explicit\n(n=…)",    width=2, fillcolor="#ffebee", color="#c62828"];
 
-    D1 -> D2
-  }
+  /* — Flux — */
+  S1 -> D1;  S2 -> D1;  S3 -> D1;  S4 -> D1;
+  D1 -> X1 -> X2 -> X3 -> X4 -> X5 -> XF1 -> D2;
 
-  /* ─── 5. Alignements horizontaux ──────────────────────── */
-  { rank=same; A1; B1 }
-  { rank=same; B5; B6 }
-  { rank=same; C5; D1 }
-  { rank=same; D2; D3 }
-  { rank=same; C1; C2; C3 }
-
-  /* ─── 6. Flux général ─────────────────────────────────── */
-  A1 -> B1
-  B5 -> B6
-  B6 -> C5
-
-  C1 -> C4
-  C2 -> C4
-  C3 -> C4
-  C4 -> C5
-
-  C5 -> D1
-  D2 -> D3
 }
