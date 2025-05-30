@@ -9,12 +9,12 @@
 *The structure and implementation of this protocol may be adapted based on the number of coders and reviewers available to participate in this study, in order to ensure feasibility while maintaining methodological transparency.*
 
 ---
-# PRISMA Flow Diagram (Draft 0.1) #
+# PRISMA Flow Diagram (Draft 0.2) #
 
 This diagram visualizes **Phase A – Corpus-Building** (see below) using a PRISMA-style flow.  
 It was created using the **Graphviz DOT language** and is [available in the repository](./prisma_diagram/prisma_diagram.dot).
 
-![PRISMA Flow Diagram (Draft 0.1)](prisma_diagram/prisma_diagram.svg)
+![PRISMA Flow Diagram (Draft 0.2)](prisma_diagram/prisma_diagram_v0.2.svg)
 
 ---
 
