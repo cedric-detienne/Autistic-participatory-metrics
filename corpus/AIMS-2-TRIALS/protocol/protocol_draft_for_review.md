@@ -40,15 +40,31 @@
 *(Performed by the **First reviewer**)*  
 
 ### Preliminary Considerations
-- **Objective:** Justify the use of full-text–searchable academic databases and external repositories rather than relying on Scopus, PubMed, Google Scholar, or the official AIMS-2-TRIALS website.  
-- **Explanation:**  
-  - A Boolean search in **Scopus** or **PubMed** using terms like **“autism” OR “autistic” OR “ASD”** (in the **title**) and **“AIMS-2-TRIALS” OR “777394”** (in **all fields**) is **not effective**, because these platforms do **not support full-text search**. As a result, they may miss critical mentions of funding within sections such as *Funding*, *Acknowledgements*, or *COI*.  
-  - **Google Scholar**, while broader in coverage, does **not allow export of structured metadata** (e.g., in `.bib` format), making it unsuitable for systematic corpus construction and analysis.  
-  - The [**official AIMS-2-TRIALS Publications page**](https://www.aims-2-trials.eu/) is not structured for automated querying or screening. It includes:  
-    - **Duplicate records**  
-    - **Broken or missing links**  
-    - **Publications funded only by EU-AIMS** (the previous project) and not by AIMS-2-TRIALS  
-  - For these reasons, a reliable, exportable, full-text–searchable database such as **Dimensions** is required to construct a valid and reproducible corpus.
+
+- **Objective:** Justify the prioritization of full-text–searchable academic databases and external repositories over platforms like Scopus, PubMed, Google Scholar, or the official AIMS-2-TRIALS website.
+
+- **Rationale:**
+
+  - A Boolean search in **Scopus** or **PubMed** using terms like **“autism” OR “autistic” OR “ASD”** (in the **title** or in the **abstract**) and **“AIMS-2-TRIALS” OR “777394”** (in **all fields**) is **insufficient**. These platforms do **not support full-text search**, which means they may overlook mentions of funding in crucial sections such as *Funding*, *Acknowledgements*, or *Conflicts of Interest*.
+
+  - **Google Scholar**, although broad in coverage, does **not support export of structured metadata** (e.g., `.bib` format), and **does not systematically provide DOIs**, making it unsuitable for systematic corpus construction and reproducibility.
+
+
+  - The [**official AIMS-2-TRIALS Publications page**](https://www.aims-2-trials.eu/) is **used as a supplementary source**, but not prioritized. It does **not include DOIs**, and there is **no standardized export option**. Moreover, it contains:
+    - Duplicate entries  
+    - Broken links  
+    - Publications funded solely by **EU-AIMS** (the previous project), not **AIMS-2-TRIALS**
+
+  - The **CORDIS** project page does provide **DOIs**, but similarly lacks export functionality for structured metadata.
+
+- **Source prioritization (based on metadata quality and reproducibility):**
+
+  1. **Dimensions** – full-text searchable; `.bib` export supported  
+  2. **Europe PMC** – full-text searchable; structured export supported  
+  3. **CORDIS project page** – DOIs available; no export  
+  4. **Official AIMS-2-TRIALS Publications page** – no DOIs; no export
+
+This prioritization ensures that the resulting corpus is robust, reproducible, and based on reliable metadata.
 
 ---
 # PRISMA Flow Diagram (Draft) #
