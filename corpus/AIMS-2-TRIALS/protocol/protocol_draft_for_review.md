@@ -8,21 +8,13 @@
 
 *The structure and implementation of this protocol may be adapted based on the number of coders and reviewers available to participate in this study, in order to ensure feasibility while maintaining methodological transparency.*
 
----
-# PRISMA Flow Diagram (Draft 0.2) #
-
-This diagram visualizes **Phase A – Corpus-Building** (see below) using a PRISMA-style flow.  
-It was created using the **Graphviz DOT language** and is [available in the repository](./prisma_diagram/prisma_diagram.dot).
-
-![PRISMA Flow Diagram (Draft 0.2)](prisma_diagram/prisma_diagram_v0.2.svg)
-
----
 
 # Table of Contents #
 
 - [Protocol – *Draft for Review*](#protocol--draft-for-review)
   - [Phase A – Corpus-Building](#phase-a--corpus-building)
     - [Preliminary Considerations](#preliminary-considerations)
+    - [PRISMA Flow Diagram (Draft)](#prisma-flow-diagram-draft)    
     - [Step 1 – Retrieve records from Dimensions](#step-1--retrieve-records-from-dimensions)
     - [Step 2 – Initial screening in JabRef](#step-2--initial-screening-in-jabref)
     - [Step 3 – Manual full-text screening (exclusion rules)](#step-3--manual-full-text-screening-exclusion-rules)
@@ -57,6 +49,16 @@ It was created using the **Graphviz DOT language** and is [available in the repo
     - **Broken or missing links**  
     - **Publications funded only by EU-AIMS** (the previous project) and not by AIMS-2-TRIALS  
   - For these reasons, a reliable, exportable, full-text–searchable database such as **Dimensions** is required to construct a valid and reproducible corpus.
+
+---
+# PRISMA Flow Diagram (Draft) #
+
+This diagram visualizes **Phase A – Corpus-Building** (see below) using a PRISMA-style flow.  
+It was created using the **Graphviz DOT language** and is [available in the repository](./prisma_diagram/prisma_diagram.dot).
+
+![PRISMA Flow Diagram (Draft 0.2)](prisma_diagram/prisma_diagram_v0.2.svg)
+
+---
 
 ### Step 1 – Retrieve records from Dimensions  
 - **Database:** [Dimensions](https://app.dimensions.ai/) (supports full-text & grant searching)  
