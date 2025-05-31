@@ -1,60 +1,60 @@
 digraph PRISMA2020 {
   /* ── Global settings ─────────────────────────────────────────────── */
-  rankdir = TB                           // Top-to-bottom layout
+  rankdir = TB
   labelloc = "t"
-  label = "PRISMA Flow Diagram (Draft 0.3)"
+  label = "PRISMA Flow Diagram (Draft 0.4)"
   fontsize = 16
   fontname = "Helvetica-Bold"
 
   nodesep = 0.5
   ranksep = 0.35
 
-  node [shape=box, fontname="Helvetica", fontsize=10, style=filled, width=2]
+  node [shape=box, fontname="Helvetica", fontsize=10, style=filled, width=2.8, fixedsize=true, height=1.2]
   edge [color=gray40]
 
-  /* ── Nodes — sources and flow ────────────────────────────────────── */
-  // Yellow box: record identification
-  R1 [label="Records identified from:\l- Dimensions (n = …)\l- Europe PMC (n = …)\l- A2T Website (n = …)\l- Cordis Website (n = …)\l", fillcolor="#fff8e1", color="#fbc02d"];
+  /* ── Main flow nodes (green) ─────────────────────────────────────── */
+  R1  [label="Records identified from:\l- Dimensions (n = …)\l- Europe PMC (n = …)\l- A2T Website (n = …)\l- Cordis Website (n = …)\l", fillcolor="#fff8e1", color="#fbc02d"];
+  R2  [label="Records after duplicates removed\n(n = …)",                    fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
+  R3  [label="Full‑text reports assessed for eligibility\n(n = …)",          fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
+  R4  [label="Reports reviewed for funding attribution\n(n = …)",                   fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
+  R5  [label="Articles included in review\n(n = …)",                         fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
 
-  // Green boxes: progression
-  R2 [label="Records screened\n(n = …)", fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
-  R3 [label="Eligibility review\n(n = …)", fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
-  R4 [label="Articles included in review\n(n = …)", fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
+  /* ── Exclusion blocks (red) ──────────────────────────────────────── */
+  X1 [label="Duplicates removed (n = …)\l",                                       fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
+  X2 [label="Excluded:\l- No autism terms in title/abstract (n = …)\l",          fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
+  X3 [label="Excluded at full‑text:\l- Not English (n = …)\l- Full text unavailable (n = …)\l- Duplicate preprint/published (n = …)\l- Not autism‑related (n = …)\l", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
+  X4 [label="Excluded:\l- A2T mentioned only in text/refs (n = …)\l- A2T funding unclear (n = …)\l", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
 
-  /* ── Exclusion notes (right) ─────────────────────────────────────── */
-  Dup  [label="Duplicates removed\n(n = …)", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
-  Xscr [label="Excluded:\l- No autism terms (n = …)\l- Duplicate preprint (n = …)\l- Not English (n = …)\l- Not autism-related (n = …)\l(n = …)", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
-  Xelig [label="Excluded:\l- A2T only in text/refs  (n = …)\l- A2T funding unclear (n = …)\l(n = …)", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
-
-  /* ── Phase labels (left, blue) ───────────────────────────────────── */
+  /* ── Phase labels (blue, plaintext) ─────────────────────────────── */
   node [shape=plaintext, fontname="Helvetica", fontsize=12,
         fillcolor="#bbdefb", style="rounded,filled", color="#0d47a1", fontcolor="#0d47a1"]
   L1 [label="Identification"];
   L2 [label="Screening"];
-  L3 [label="Included"];
+  L3 [label="Eligibility"];
+  L4 [label="Included"];
 
-  L1 -> L2
-  L2 -> L3
+  /* ── Rank alignments ─────────────────────────────────────────────── */
+  { rank=same; L1; R1; X1 }
+  { rank=same;  L2;    R2; X2 }
+  { rank=same;    R3; X3 }
+  { rank=same; L3;   R4; X4 }
+  { rank=same; L4;   R5 }
 
-  /* ── Alignment ───────────────────────────────────────────────────── */
-  { rank=same; L1; R1; Dup }
-  { rank=same; L2; R2; Xscr }
-  { rank=same; R3; Xelig }
-  { rank=same; L3; R4 }
-
-  /* ── Flow arrows ─────────────────────────────────────────────────── */
+  /* ── Main flow arrows ───────────────────────────────────────────── */
   R1 -> R2
   R2 -> R3
   R3 -> R4
+  R4 -> R5
 
-  /* Invisible edges for alignment */
-R1:e -> Dup:w
-R2:e -> Xscr:w
-R3:e -> Xelig:w
+  /* ── Exclusion arrows (visible) ─────────────────────────────────── */
+  R1:e -> X1:w
+  R2:e -> X2:w
+  R3:e -> X3:w
+  R4:e -> X4:w
 
+  /* ── Invisible edges to align phase labels ──────────────────────── */
   L1 -> R1 [style=invis]
   L2 -> R2 [style=invis]
   L3 -> R4 [style=invis]
-
-
+  L4 -> R5 [style=invis]
 }
