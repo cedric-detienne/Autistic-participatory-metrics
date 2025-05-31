@@ -14,19 +14,22 @@
 - [Protocol – *Draft for Review*](#protocol--draft-for-review)
   - [Phase A – Corpus-Building](#phase-a--corpus-building)
     - [Preliminary Considerations](#preliminary-considerations)
-    - [PRISMA Flow Diagram (Draft)](#prisma-flow-diagram-draft)    
+    - [PRISMA Flow Diagram (Draft)](#prisma-flow-diagram-draft)
     - [Step 1 – Retrieve records from Dimensions](#step-1--retrieve-records-from-dimensions)
-    - [Step 2 – Initial screening in JabRef](#step-2--initial-screening-in-jabref)
-    - [Step 3 – Manual full-text screening (exclusion rules)](#step-3--manual-full-text-screening-exclusion-rules)
-    - [Step 4 – Supplementary search in Europe PMC](#step-4--supplementary-search-in-europe-pmc)
-    - [Step 5 – Screening the CORDIS website – AIMS-2-TRIALS page](#step-5--screening-the-cordis-website--aims-2-trials-page)
-    - [Step 6 – Screening the project website](#step-6--screening-the-project-website)
-    - [Step 7 – Detailed analysis of funding attribution](#step-7--detailed-analysis-of-funding-attribution)
+    - [Step 2 – Retrieve records from Europe PMC](#step-2--retrieve-records-from-europe-pmc)
+    - [Step 3 – Retrieve records from the CORDIS website](#step-3--retrieve-records-from-the-cordis-website)
+    - [Step 4 – Retrieve records from the AIMS-2-TRIALS project website](#step-4--retrieve-records-from-the-aims-2-trials-project-website)
+    - [Step 5 – De-duplication across all sources](#step-5--de-duplication-across-all-sources)
+    - [Step 6 – Screen for autism-related terms in title/abstract](#step-6--screen-for-autism-related-terms-in-titleabstract)
+    - [Step 7 – Manual full-text screening (exclusion rules)](#step-7--manual-full-text-screening-exclusion-rules)
+    - [Step 8 – Detailed analysis of funding attribution](#step-8--detailed-analysis-of-funding-attribution)
+
   - [Phase B – Corpus Verification](#phase-b--corpus-verification)
     - [1 · Preparatory extraction — First reviewer](#1--preparatory-extraction--first-reviewer)
     - [2 · Independent check — Second reviewer](#2--independent-check--second-reviewer)
     - [3 · Resolution of discrepancies](#3--resolution-of-discrepancies)
-  - [## Phase C – Corpus Analysis Informed by GRIPP2-LF ##](#phase-c--corpus-analysis-informed-by-gripp2-lf)
+  
+  - [Phase C – Corpus Analysis Informed by GRIPP2-LF](#phase-c--corpus-analysis-informed-by-gripp2-lf)
     - [Step 1 – Develop the GRIPP2-LF coding framework](#step-1--develop-the-gripp2-lf-coding-framework)
     - [Step 2 – Joint calibration on a common subset](#step-2--joint-calibration-on-a-common-subset)
     - [Step 3 – Workload division with single primary coding](#step-3--workload-division-with-single-primary-coding)
@@ -76,62 +79,63 @@ It was created using the **Graphviz DOT language** and is [available in the repo
 
 ---
 
-### Step 1 – Retrieve records from Dimensions  
-- **Database:** [Dimensions](https://app.dimensions.ai/) (supports full-text & grant searching)  
-- **Objective:** Identify all publications that mention both autism-related terms and AIMS-2-TRIALS (or its grant number), using a comprehensive query applied to all searchable fields.  
-- **Action:**  
-  - Perform a search in Dimensions using the following query across **all fields**  
-    *(coverage: records published up to **31 May 2025**, inclusive)*:  
-    `("777394" OR "AIMS-2-TRIALS") AND ("autism" OR "autistic" OR "ASD")` 
-  - Retrieve the full set of matching records.  
-  - **Export** the complete result set in `.bib` format for further processing in JabRef.
+### Step 1 – Retrieve records from Dimensions
+- **Source:** [Dimensions](https://app.dimensions.ai/) – supports full-text and grant-based searches
+- **Objective:** Identify all publications that mention both autism-related terms and the AIMS-2-TRIALS project (or its grant number), using a comprehensive query across all searchable fields.
+- **Action:**
+  - Perform a search across **all fields** using the following query:  
+    *(Coverage: records published up to **31 May 2025**, inclusive)*  
+    `("777394" OR "AIMS-2-TRIALS") AND ("autism" OR "autistic" OR "ASD")`
+  - Additionally, test common misspellings such as `"AIMS2TRIALS"`, `"AIMS2-TRIALS"`, and `"AIMS-2TRIALS"` to check for overlooked records.
+  - Export the full result set in `.bib` format for import into JabRef.
 
-### Step 2 – Initial screening in JabRef  
-- **Tool:** [JabRef](https://www.jabref.org/) – a free, open-source reference manager for BibTeX and BibLaTeX libraries.
-- **Objective:** Ensure that each entry has sufficient metadata (including an abstract) to evaluate its relevance to autism and to allow consistent screening.  
-- **Action:**  
-  - Import the `.bib` file into JabRef.  
-  - Identify all entries that **do not contain an abstract**.  
-  - **Manually add** missing abstracts where possible (e.g., by consulting the publisher’s website or article PDF).  
-    - *Note:* Editorials and similar publication types that do not typically include abstracts may be left unchanged.  
-  - **Exclude** all entries that do **not** contain **“autism”, “autistic”, or “ASD”** in the **title** *and/or* **abstract**.
+### Step 2 – Retrieve records from Europe PMC
+- **Source:** [Europe PMC](https://europepmc.org/)
+- **Objective:** Identify additional autism-related publications acknowledging AIMS-2-TRIALS support.
+- **Action:**
+  - Perform a search across **title** and **abstract** using the following query:  
+    *(Coverage: records published up to **31 May 2025**, inclusive)*  
+    `(TITLE:(autism OR autistic OR ASD) OR ABSTRACT:(autism OR autistic OR ASD)) AND ("AIMS-2-TRIALS" OR "777394")`
+  - Export the complete result set.
 
-### Step 3 – Manual full-text screening (exclusion rules)  
+### Step 3 – Retrieve records from the CORDIS website
+- **Source:** [CORDIS – AIMS-2-TRIALS project results](https://cordis.europa.eu/project/id/777394/results)
+- **Objective:** Review peer-reviewed outputs linked to AIMS-2-TRIALS.
+- **Action:**
+  - Manually screen all records listed on the results page as of 31 May 2025.
+
+### Step 4 – Retrieve records from the AIMS-2-TRIALS project website
+- **Source:** [AIMS-2-TRIALS Publications page](https://www.aims-2-trials.eu/)
+- **Objective:** Identify relevant entries on the official project website.
+- **Action:**
+  - Manually screen each listed publication as of 31 May 2025.
+
+### Step 5 – De-duplication across all sources
+- **Tool:** JabRef.
+- **Objective:** Ensure each article appears only once in the master corpus.
+- **Action:**
+  - Compare all records collected from Steps 1 through 4.
+  - Identify duplicates based on DOI.
+  - Retain only one unique instance of each article.
+
+### Step 6 – Screen for autism-related terms in title/abstract  
+- **Objective:** Ensure that only publications explicitly addressing autism are retained for eligibility assessment.  
+- **Action:**  
+  - Before performing this screening, verify that all entries contain an abstract. If missing, manually retrieve and add the abstract from the publisher’s website or article PDF.  
+  - Exclude any record that does **not** mention **“autism”**, **“autistic”**, or **“ASD”** in the **title** *and/or* **abstract**.  
+  - This step ensures topic relevance before proceeding to full-text eligibility review.
+
+### Step 7 – Manual full-text screening (exclusion rules)  
 - **Objective:** Ensure that only articles that are directly relevant to autism and that clearly acknowledge funding from AIMS-2-TRIALS are included in the corpus.  
 - **Action:**  
-  Manually screen all remaining entries after Step 2. Exclude any entry that meets **one or more** of the following criteria:
+  Exclude any entry that meets **one or more** of the following criteria:
 
   1. Mentions **“autism”, “autistic”, or “ASD”** in the abstract **but the article is not directly about autism**  
   2. Article language is **not English**  
   3. Entry is a **preprint** that has since been published in a peer-reviewed journal  
   4. **AIMS-2-TRIALS** (or grant **777394**) is mentioned **only** in the body text or bibliography and **not** in a funding-related section (e.g. *Acknowledgements*, *Funding*, *Conflict of Interest (COI)*)  
 
-### Step 4 – Supplementary search in Europe PMC  
-- **Database:** [Europe PMC](https://europepmc.org/)
-- **Objective:** Identify additional relevant publications related to autism that acknowledge funding or support from AIMS-2-TRIALS.  
-- **Query:**  
-  *(coverage: records published up to **31 May 2025**, inclusive)*:  
-  `(TITLE:(autism OR autistic OR ASD) OR ABSTRACT:(autism OR autistic OR ASD)) AND ("AIMS-2-TRIALS" OR "777394")`  
-- **Action:**  
-  - Perform the query in Europe PMC and retrieve all matching entries.  
-  - Apply all exclusion criteria defined in **Step 3** (language, relevance to autism, funding mention, etc.).  
-  - **Remove duplicates** already included from the Dimensions search.
-
-### Step 5 – Screening the CORDIS website – AIMS-2-TRIALS page  
-- **Source:** [CORDIS – AIMS-2-TRIALS project results](https://cordis.europa.eu/project/id/777394/results)
-- **Objective:** Review all peer-reviewed studies and publications listed on the CORDIS AIMS-2-TRIALS project results page, **covering outputs posted up to 31 May 2025**.
-- **Action:**
-  - Manually screen all listed peer reviewed articles.  
-  - Apply all exclusion criteria from **Step 3**.  
-  - **Remove duplicates** already present from Dimensions and Europe PMC searches.
- 
-### Step 6 – Screening the project website  
-- **Source:** [“Publications” page on the AIMS-2-TRIALS website](https://www.aims-2-trials.eu/)
-- Screen every listed entry **available as of 31 May 2025**
-- Apply all exclusion criteria from **Step 3**  
-- Remove duplicates already present from Dimensions and Europe PMC  
-
-### Step 7 – Detailed analysis of funding attribution  
+### Step 8 – Detailed analysis of funding attribution  
 - **Objective:** Ensure that only publications explicitly funded by AIMS-2-TRIALS are retained in the corpus, based on strict and verifiable funding attribution criteria.  
 - **Action:**  
   - For each remaining entry, perform a manual review of the **Funding**, **Acknowledgements**, and **Conflict of Interest (COI)** sections.  
