@@ -1,8 +1,8 @@
 # Protocol – *Draft for Review*  #
 
 **Study:** *Autistic Participation Reporting in Autism Research Articles Funded by AIMS-2-TRIALS: A Corpus Analysis Informed by GRIPP2-LF*  
-**Version:** 0.2 – *Draft under review by research collaborators*  
-**Date:** 2025-05-29 
+**Version:** 0.3 – *Draft under review by research collaborators*  
+**Date:** 2025-05-31
 
 *This protocol is a preliminary draft. It is intended for collaborative feedback and discussion among project participants and may be modified or restructured based on collective input.*
 
