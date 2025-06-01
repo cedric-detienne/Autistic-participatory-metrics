@@ -22,7 +22,7 @@ digraph PRISMA2020 {
   /* ── Exclusion blocks (red) ──────────────────────────────────────── */
   X1 [label="Duplicates removed (n = …)\l",                                       fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
   X2 [label="Excluded:\l- No autism terms in title/abstract (n = …)\l",          fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
-  X3 [label="Excluded:\l- Duplicate preprint/published (n = …)\l- Not autism‑related (n = …)\l- Not English (n = …)\l- Full text unavailable (n = …)\l", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
+  X3 [label="Excluded:\l- Duplicate preprint/published (n = …)\l- Not autism‑related (n = …)\l- Not English (n = …)\l- Full text unavailable (n = …)\l- Research summary only (n = …)\l", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
   X4 [label="Excluded:\l- A2T not mentioned (n = …)\l- A2T mentioned only in text/refs (n = …)\l- A2T funding unclear (n = …)\l", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
 
   /* ── Phase labels (blue, plaintext) ─────────────────────────────── */
