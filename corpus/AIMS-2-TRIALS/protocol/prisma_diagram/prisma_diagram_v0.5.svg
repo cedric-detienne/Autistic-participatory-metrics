@@ -88,11 +88,12 @@
 <g id="node8" class="node">
 <title>X3</title>
 <polygon fill="#ffebee" stroke="#c62828" points="677.6,-309.2 476,-309.2 476,-222.8 677.6,-222.8 677.6,-309.2"/>
-<text text-anchor="start" x="484" y="-284.62" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">Excluded:</text>
-<text text-anchor="start" x="484" y="-273.38" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">&#45; Duplicate preprint/published (n = …)</text>
-<text text-anchor="start" x="484" y="-262.12" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">&#45; Not autism‑related (n = …)</text>
-<text text-anchor="start" x="484" y="-250.88" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">&#45; Not English (n = …)</text>
-<text text-anchor="start" x="484" y="-239.62" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">&#45; Full text unavailable (n = …)</text>
+<text text-anchor="start" x="484" y="-290.25" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">Excluded:</text>
+<text text-anchor="start" x="484" y="-279" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">&#45; Duplicate preprint/published (n = …)</text>
+<text text-anchor="start" x="484" y="-267.75" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">&#45; Not autism‑related (n = …)</text>
+<text text-anchor="start" x="484" y="-256.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">&#45; Not English (n = …)</text>
+<text text-anchor="start" x="484" y="-245.25" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">&#45; Full text unavailable (n = …)</text>
+<text text-anchor="start" x="484" y="-234" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#b71c1c">&#45; Research summary only (n = …)</text>
 </g>
 <!-- R3&#45;&gt;X3 -->
 <g id="edge7" class="edge">
