@@ -110,13 +110,14 @@ It was created using the **Graphviz DOT language** and is [available in the repo
 - **Action:**
   - Manually screen each listed publication as of 31 May 2025.
 
-### Step 5 – De-duplication across all sources
-- **Tool:** JabRef.
-- **Objective:** Ensure each article appears only once in the master corpus.
-- **Action:**
-  - Compare all records collected from Steps 1 through 4.
-  - Identify duplicates based on DOI.
-  - Retain only one unique instance of each article.
+### Step 5 – De-duplication Across Sources
+- **Tool:** JabRef  
+- **Objective:** Ensure each unique article is represented only once in the master corpus while preserving its provenance.  
+- **Action:**  
+  - Assign each reference to a JabRef Source group corresponding to its origin (Dimensions, Europe PMC, CORDIS, or the AIMS-2-TRIALS website).  
+  - Compare all records imported in Steps 1–4 using the DOI as the primary identifier for duplicate detection.  
+  - If the same DOI appears across multiple sources, retain a single consolidated entry.  
+  - Preserve source traceability by assigning the reference to all relevant Source groups, allowing a single entry to reflect multiple origins.
 
 ### Step 6 – Screen for autism-related terms in title/abstract  
 - **Objective:** Ensure that only publications explicitly addressing autism are retained for eligibility assessment.  
@@ -147,39 +148,64 @@ It was created using the **Graphviz DOT language** and is [available in the repo
 
 ---
 
-## Phase B – Corpus Verification ##
+## Phase B – Corpus Verification (Funding Attribution)  
 
-### 1 · Preparatory extraction — First reviewer  
-- **Objective:** Capture precise evidence of AIMS-2-TRIALS funding/support for every article—whether ultimately included or excluded—to enable transparent verification and automated checks.  
-- **Action:**  
-  - For **every entry** (including those excluded solely for a “support” mention), manually extract:  
-    - The **sentence(s)** that contain the AIMS-2-TRIALS funding or support statement.  
-    - The **section title** in which the statement appears (e.g. *Acknowledgements*, *Funding*, *Conflict of Interest (COI)*).  
-  - Insert this information into a new **`FundingSection`** field in the corresponding record of the `.bib` file.  
-  - Execute the automatic attribution script, which verifies that the **first five words** of each `FundingSection` sentence are present in the article’s full text, confirming correct linkage between the extracted sentence and its bibliographic entry.
+> **Scope.** Phase B provides an *independent, blinded* check of every funding-attribution decision made during Phase A.  
+> Secondary reviewers see only the **article title** and the **sentence-level excerpt(s)** captured by the primary reviewer; they do **not** see the primary reviewer’s eligibility code.
 
-### 2 · Independent check — Second reviewer  
-- **Objective:** Provide an unbiased quality-control step that confirms the accuracy of funding attribution for a representative subset of entries.  
-- **Action:**  
-  1. Using a **custom NocoDB web-form**, generate and assign a **random 15 % sample** from **all** records that contain an AIMS-2-TRIALS support statement (financial **or** non-financial).  
-     - The NocoDB form automatically logs sample selection, reviewer ID, and timestamp.  
-  2. For each sampled record, consult **only** the information stored in the `FundingSection` field and independently verify:  
-     - That the cited **AIMS-2-TRIALS support** complies with the eligibility rules established in Phase A.  
-     - Whether the wording specifies the **project** itself or one or more **author(s)** as the funded entity.  
-  3. Enter decisions and comments in the same NocoDB form; the database captures all verification outcomes for downstream comparison.
+---
 
-### 3 · Resolution of discrepancies  
-- **Objective:** Establish a clear decision path for handling disagreements between the First and Second reviewers and ensure the corpus is validated only when funding attribution is error-free.  
+### 1 · Preparatory extraction — First reviewer (Phase A recap)  
+- **Objective:** Capture transparent, citable evidence of AIMS-2-TRIALS funding/support for every record.  
 - **Action:**  
-  1. Use NocoDB’s comparison view to juxtapose the Second reviewer’s entries with the original `FundingSection` extractions recorded by the First reviewer.  
-  2. **If there is complete agreement:** Mark the corpus as **approved** for subsequent analysis of autistic-participation reporting.  
-  3. **If any disagreement occurs:**  
-     - A **Third reviewer** adjudicates within NocoDB, recording the final decision and rationale.  
-     - **If the error is attributed to the Second reviewer:** The corpus remains **valid**; proceed to analysis.  
-     - **If the error is attributed to the First reviewer:**  
-       1. Draw a **new random 15 % sample** from the *remaining* (previously unchecked) entries via NocoDB’s sampling function.  
-       2. The Second reviewer repeats the independent verification on this new sample, again logging all decisions in NocoDB.  
-       3. Continue iterative sampling and verification until **no error** is attributed to the First reviewer.
+  - For **every entry** (even exclusions that mention only “support”), the primary reviewer records:  
+    1. The **sentence(s)** that contain the AIMS-2-TRIALS funding or support statement.  
+    2. The **section heading** in which that statement appears (e.g. *Funding*, *Acknowledgements*, *COI*).  
+    3. A binary code (*AIMS-2-TRIALS support eligible? yes / no*).  
+  - An auto-attribution script confirms linkage by matching the first ten words of the extracted sentence(s) against the article full text; discrepancies are flagged for manual review.
+
+---
+
+### 2 · Reviewer training — eligibility-rules comprehension check
+- **Objective:** Ensure uniform application of Phase-A eligibility rules before blind verification begins.  
+- **Action:**  
+  1. **Calibration set (20 excerpts):** Each prospective secondary reviewer independently judges *inclusion* or *exclusion* for 20 randomly sampled excerpts (section heading + sentence(s)).  
+  2. **Consensus meeting (eligibility-rules focus):** Divergent judgments are revisited, with explicit reference to the Phase-A eligibility rules, under the guidance of the project lead until unanimous agreement is reached.  
+
+---
+
+### 3 · Independent blind verification (secondary reviewers)  
+- **Objective:** Obtain an independent eligibility decision for **every** extracted passage.  
+- **Action:**  
+  1. **Work allocation:** Each excerpt is assigned to exactly one certified secondary reviewer who did **not** participate in Phase A extraction, ensuring complete separation of roles.
+  2. **Blinded NocoDB form:** Secondary reviewers view only:  
+     - the **section heading**, and  
+     - the **extracted sentence(s)**.  
+     The Phase-A eligibility code is hidden.  
+  3. **Data captured:** Secondary reviewers enter:
+     - a binary judgment (*funded by AIMS-2-TRIALS? yes / no*), and  
+     - optional comments.  
+  4. **Agreement rule:**  
+      - **100 % concordance** is required between primary and secondary reviewers on the binary judgment (*funded by AIMS-2-TRIALS? yes / no*).  
+     - Any discordance, however minor, triggers the discrepancy-resolution pathway.
+
+---
+
+### 4 · Resolution of discrepancies  
+- **Objective:** Resolve all disagreements so that the final corpus is error-free.  
+- **Action:**  
+  1. **Automated flagging:** NocoDB’s *Comparison* view automatically highlights every excerpt for which the eligibility attribution recorded by the **primary reviewer** and that of the **secondary reviewer** are not in 100 % concordance.
+  2. **Consensus attempt:** Primary and secondary reviewers confer (asynchronously or live) to reach agreement.  
+  3. **Tertiary adjudication:** If consensus fails, a tertiary reviewer renders a binding decision and records a rationale.   
+  4. **Corpus lock:** The corpus is marked **Approved** only when every excerpt carries a unanimous eligibility label.
+
+---
+
+### 5 · Documentation & versioning  
+- **Public release after corpus lock:**  
+  - An **anonymised verification table** (with reviewer identifiers removed),  
+  - the **definitive corpus list** (structured file containing year, authors, title, DOI, journal, etc.), and  
+  - the corresponding **`.bib` file** are published together in the project’s public GitHub repository at the end of Phase B, enabling full external scrutiny.  
 
 ---
 
