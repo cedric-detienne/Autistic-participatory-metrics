@@ -1,8 +1,8 @@
 # Protocol – *Draft for Review*  #
 
 **Study:** *Autistic Participation Reporting in Autism Research Articles Funded by AIMS-2-TRIALS: A Corpus Analysis Informed by GRIPP2-LF*  
-**Version:** 0.3 – *Draft under review by research collaborators*  
-**Date:** 2025-05-31
+**Version:** 0.4 – *Draft under review by research collaborators*  
+**Date:** 2025-06-02
 
 *This protocol is a preliminary draft. It is intended for collaborative feedback and discussion among project participants and may be modified or restructured based on collective input.*
 
@@ -12,30 +12,36 @@
 # Table of Contents #
 
 - [Protocol – *Draft for Review*](#protocol--draft-for-review)
-  - [Phase A – Corpus-Building](#phase-a--corpus-building)
-    - [Preliminary Considerations](#preliminary-considerations)
-    - [PRISMA Flow Diagram (Draft)](#prisma-flow-diagram-draft)
-    - [Step 1 – Retrieve records from Dimensions](#step-1--retrieve-records-from-dimensions)
-    - [Step 2 – Retrieve records from Europe PMC](#step-2--retrieve-records-from-europe-pmc)
-    - [Step 3 – Retrieve records from the CORDIS website](#step-3--retrieve-records-from-the-cordis-website)
-    - [Step 4 – Retrieve records from the AIMS-2-TRIALS project website](#step-4--retrieve-records-from-the-aims-2-trials-project-website)
-    - [Step 5 – De-duplication across all sources](#step-5--de-duplication-across-all-sources)
-    - [Step 6 – Screen for autism-related terms in title/abstract](#step-6--screen-for-autism-related-terms-in-titleabstract)
-    - [Step 7 – Manual full-text screening (exclusion rules)](#step-7--manual-full-text-screening-exclusion-rules)
-    - [Step 8 – Detailed analysis of funding attribution](#step-8--detailed-analysis-of-funding-attribution)
 
-  - [Phase B – Corpus Verification](#phase-b--corpus-verification)
-    - [1 · Preparatory extraction — First reviewer](#1--preparatory-extraction--first-reviewer)
-    - [2 · Independent check — Second reviewer](#2--independent-check--second-reviewer)
-    - [3 · Resolution of discrepancies](#3--resolution-of-discrepancies)
-  
-  - [Phase C – Corpus Analysis Informed by GRIPP2-LF](#phase-c--corpus-analysis-informed-by-gripp2-lf)
-    - [Step 1 – Develop the GRIPP2-LF coding framework](#step-1--develop-the-gripp2-lf-coding-framework)
-    - [Step 2 – Joint calibration on a common subset](#step-2--joint-calibration-on-a-common-subset)
-    - [Step 3 – Workload division with single primary coding](#step-3--workload-division-with-single-primary-coding)
-    - [Step 4 – Secondary quality-control coding](#step-4--secondary-quality-control-coding)
-    - [Step 5 – Consolidation and master dataset creation](#step-5--consolidation-and-master-dataset-creation)
-    - [Step 6 – Descriptive and comparative analysis](#step-6--descriptive-and-comparative-analysis)
+  ## Phase A – Corpus-Building *(Performed by the First reviewer)*
+
+  1. [Preliminary Considerations](#preliminary-considerations)
+  2. [PRISMA Flow Diagram (Draft)](#prisma-flow-diagram-draft)
+  3. [Step 1 – Retrieve records from Dimensions](#step-1--retrieve-records-from-dimensions)
+  4. [Step 2 – Retrieve records from Europe PMC](#step-2--retrieve-records-from-europe-pmc)
+  5. [Step 3 – Retrieve records from the CORDIS website](#step-3--retrieve-records-from-the-cordis-website)
+  6. [Step 4 – Retrieve records from the AIMS-2-TRIALS project website](#step-4--retrieve-records-from-the-aims-2-trials-project-website)
+  7. [Step 5 – De-duplication Across Sources](#step-5--de-duplication-across-sources)
+  8. [Step 6 – Screen for autism-related terms in title/abstract](#step-6--screen-for-autism-related-terms-in-titleabstract)
+  9. [Step 7 – Manual full-text screening (exclusion rules)](#step-7--manual-full-text-screening-exclusion-rules)
+  10. [Step 8 – Detailed analysis of funding attribution](#step-8--detailed-analysis-of-funding-attribution)
+
+  ## Phase B – Corpus Verification (Funding Attribution)
+
+  1. [Preparatory extraction — First reviewer (Phase A recap)](#1--preparatory-extraction--first-reviewer-phase-a-recap)
+  2. [Reviewer training — eligibility-rules comprehension check](#2--reviewer-training--eligibility-rules-comprehension-check)
+  3. [Independent blind verification (secondary reviewers)](#3--independent-blind-verification-secondary-reviewers)
+  4. [Resolution of discrepancies](#4--resolution-of-discrepancies)
+  5. [Documentation & versioning](#5--documentation--versioning)
+
+  ## Phase C – Corpus Analysis Informed by GRIPP2-LF
+
+  1. [Step 1 – Develop the GRIPP2-LF coding framework](#step-1--develop-the-gripp2-lf-coding-framework)
+  2. [Step 2 – Joint calibration on a common subset](#step-2--joint-calibration-on-a-common-subset)
+  3. [Step 3 – Workload division with single primary coding](#step-3--workload-division-with-single-primary-coding)
+  4. [Step 4 – Secondary quality-control coding](#step-4--secondary-quality-control-coding)
+  5. [Step 5 – Consolidation and master dataset creation](#step-5--consolidation-and-master-dataset-creation)
+  6. [Step 6 – Descriptive and comparative analysis](#step-6--descriptive-and-comparative-analysis)
 
 ---
 
