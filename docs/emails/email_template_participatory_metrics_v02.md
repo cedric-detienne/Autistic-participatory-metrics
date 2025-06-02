@@ -1,4 +1,4 @@
-Dear [Name],
+Dear contributors to autism research,
 
 I'm currently developing a **citizen-led project** called *Autistic Participatory Metrics*, which aims to analyse how autistic participation is described in autism research publications. Our first case study focuses on the **AIMS-2-TRIALS** consortium, using a structured reporting framework (**GRIPP2-LF**) to examine several hundred peer-reviewed articles.
 
@@ -31,9 +31,9 @@ Rather than identifying whether autistic people are listed as authors, the proje
 
 ## AIMS-2-TRIALS as a Case Study
 
-The first case study applies this framework to peer-reviewed outputs that acknowledge funding from the European consortium **AIMS-2-TRIALS** (*Autism Innovative Medicine Studies-2-Trials*). Launched in 2018 and running through 2026, AIMS-2-TRIALS is a large-scale biomedical research programme that brings together multiple research groups across Europe to investigate the biology of autism across the lifespan. With over **€115 million in funding** — including **€55 million from the European Union** [(4)](https://cordis.europa.eu/project/id/777394) — the consortium aims to identify biological markers and develop new pharmacological treatments targeting social communication, repetitive behaviours, and sensory issues.
+The first case study applies this framework to peer-reviewed outputs that acknowledge funding from the European consortium **AIMS-2-TRIALS** (*Autism Innovative Medicine Studies-2-Trials*). Launched in 2018 and running through 2026, AIMS-2-TRIALS is a large-scale biomedical research programme that brings together multiple research groups across Europe to investigate the biology of autism across the lifespan. With over **€115 million in funding** — including **€55 million from the European Union** [(3)](https://cordis.europa.eu/project/id/777394) — the consortium aims to identify biological markers and develop new pharmacological treatments targeting social communication, repetitive behaviours, and sensory issues.
 
-From the perspective of the *Autistic Participatory Metrics* project, AIMS-2-TRIALS offers a particularly relevant and well-defined corpus, with several hundred peer-reviewed publications and a stated commitment to stakeholder inclusion. The consortium explicitly describes itself as “likely the first large-scale consortium to invite a group of autistic people and carers to get involved across the entire project.” [(3)](https://web.archive.org/web/20250501082321/https://www.aims-2-trials.eu/about-aims-2-trials/team/autism-representatives/)
+From the perspective of the *Autistic Participatory Metrics* project, AIMS-2-TRIALS offers a particularly relevant and well-defined corpus, with several hundred peer-reviewed publications and a stated commitment to stakeholder inclusion. The consortium explicitly describes itself as “likely the first large-scale consortium to invite a group of autistic people and carers to get involved across the entire project.” [(4)](https://web.archive.org/web/20250501082321/https://www.aims-2-trials.eu/about-aims-2-trials/team/autism-representatives/)
 
 This claim, along with the scale and diversity of the research outputs, makes it a strong candidate for empirical analysis of how autistic participation is described, operationalised, and reported in scientific publications. The case study also responds to recent calls — for example, by the European Council of Autistic People (EUCAP) — to ensure independent evaluation of EU-funded autism research initiatives, with specific attention to the scope and quality of participatory practices [(5)](https://eucap.eu/wp-content/uploads/2024/05/EUCAP-Manifesto-2024-for-EU-Elections.pdf).
 
@@ -97,7 +97,7 @@ Warm regards,
 ## Sources
 
 1. https://autidacts.org/  
-2. https://github.com/cedric-detienne/Autistic-participatory-metrics  
-3. https://web.archive.org/web/20250501082321/https://www.aims-2-trials.eu/about-aims-2-trials/team/autism-representatives/  
-4. https://cordis.europa.eu/project/id/777394  
+2. https://github.com/cedric-detienne/Autistic-participatory-metrics
+3. https://cordis.europa.eu/project/id/777394  
+4. https://web.archive.org/web/20250501082321/https://www.aims-2-trials.eu/about-aims-2-trials/team/autism-representatives/  
 5. https://eucap.eu/wp-content/uploads/2024/05/EUCAP-Manifesto-2024-for-EU-Elections.pdf  
