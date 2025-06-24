@@ -1,6 +1,6 @@
 # Protocol – *Draft for Review*  #
 
-**Study:** *Autistic Participation Reporting in Autism Research Articles Funded by AIMS-2-TRIALS: A Corpus Analysis Informed by GRIPP2-LF*  
+**Study:** *Autistic Participation Reporting in Autism Research Articles Supported by AIMS-2-TRIALS: A Corpus Analysis Informed by GRIPP2-LF*  
 **Version:** 0.4 – *Draft under review by research collaborators*  
 **Date:** 2025-06-02
 
@@ -132,12 +132,13 @@ It was created using the **Graphviz DOT language** and is [available in the repo
 ### Step 7 – Manual full-text screening (exclusion rules)  
 - **Objective:** Ensure that only articles that are directly relevant to autism and that clearly acknowledge support from AIMS-2-TRIALS are included in the corpus.  
 - **Action:**  
-  Exclude any entry that meets **one or more** of the following criteria:
-
-  1. Mentions **“autism”, “autistic”, or “ASD”** in the abstract **but the article is not directly about autism**  
-  2. Article language is **not English**  
-  3. Entry is a **preprint** that has since been published in a peer-reviewed journal  
-  4. **AIMS-2-TRIALS** (or grant **777394**) is mentioned **only** in the body text or bibliography and **not** in a support-related section (e.g. *Acknowledgements*, *Funding*)  
+#### Exclusion Criteria  
+Exclude any record that meets **one or more** of the following conditions:
+  1. The record is **not a peer-reviewed research article** (i.e., an original empirical study, systematic review, or meta-analysis); therefore we exclude abstract-only entries without full text, corrigenda/corrections, books, editorials, perspective or opinion pieces, letters to the editor, and any other non-empirical content.
+  2. The abstract mentions **“autism”, “autistic”, or “ASD”** but the article itself is **not directly about autism**.  
+  3. The record is a **preprint** that has since been published in a peer-reviewed journal (the peer-reviewed version will be used instead).  
+  4. **AIMS-2-TRIALS** (or grant **777394**) is **not cited anywhere** in the article.  
+  4. **AIMS-2-TRIALS** (or grant **777394**) is **only cited in passing**—for example, listed as a **consortium** in the main text or bibliography —**without any explicit statement of funding or support**.
 
 ### Step 8 – Support Attribution Check
 
