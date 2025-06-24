@@ -9,7 +9,7 @@
 *The structure and implementation of this protocol may be adapted based on the number of coders and reviewers available to participate in this study, in order to ensure feasibility while maintaining methodological transparency.*
 
 
-# Table of Contents #
+# Table of Contents
 
 - [Protocol – *Draft for Review*](#protocol--draft-for-review)
 
@@ -23,22 +23,22 @@
   - [Step 5 – De-duplication Across Sources](#step-5--de-duplication-across-sources)
   - [Step 6 – Screen for autism-related terms in title/abstract](#step-6--screen-for-autism-related-terms-in-titleabstract)
   - [Step 7 – Manual full-text screening (exclusion rules)](#step-7--manual-full-text-screening-exclusion-rules)
-  - [Step 8 – Detailed analysis of funding attribution](#step-8--detailed-analysis-of-funding-attribution)
+  - [Step 8 – Support Attribution Check](#step-8--support-attribution-check)
 
-- [Phase B – Corpus Verification (Funding Attribution)](#phase-b--corpus-verification-funding-attribution)
-  - [Preparatory extraction — First reviewer (Phase A recap)](#1--preparatory-extraction--first-reviewer-phase-a-recap)
+- [Phase B – Corpus Verification (Support Attribution)](#phase-b--corpus-verification-support-attribution)
+  - [Preparatory extraction — First reviewer](#1--preparatory-extraction--first-reviewer)
   - [Reviewer training — eligibility-rules comprehension check](#2--reviewer-training--eligibility-rules-comprehension-check)
   - [Independent blind verification (secondary reviewers)](#3--independent-blind-verification-secondary-reviewers)
   - [Resolution of discrepancies](#4--resolution-of-discrepancies)
   - [Documentation & versioning](#5--documentation--versioning)
 
 - [Phase C – Corpus Analysis Informed by GRIPP2-LF](#phase-c--corpus-analysis-informed-by-gripp2-lf)
-  - [Step 1 – Develop the GRIPP2-LF coding framework](#step-1--develop-the-gripp2-lf-coding-framework)
-  - [Step 2 – Joint calibration on a common subset](#step-2--joint-calibration-on-a-common-subset)
-  - [Step 3 – Workload division with single primary coding](#step-3--workload-division-with-single-primary-coding)
-  - [Step 4 – Secondary quality-control coding](#step-4--secondary-quality-control-coding)
-  - [Step 5 – Consolidation and master dataset creation](#step-5--consolidation-and-master-dataset-creation)
-  - [Step 6 – Descriptive and comparative analysis](#step-6--descriptive-and-comparative-analysis)
+  - [Step 1 – Create a Custom AppSmith Form Integrating GRIPP2-LF Domains and Items from the BMJ Reference](#step-1--create-a-custom-appsmith-form-integrating-gripp2-lf-domains-and-items-from-the-bmj-reference)
+  - [Step 2 – Joint Calibration on a Common Subset](#step-2--joint-calibration-on-a-common-subset)
+  - [Step 3 – Workload Allocation for Primary Coding](#step-3--workload-allocation-for-primary-coding)
+  - [Step 4 – Secondary Quality-Control Coding](#step-4--secondary-quality-control-coding)
+  - [Step 5 – Consolidation and Master Dataset Construction](#step-5--consolidation-and-master-dataset-construction)
+  - [Step 6 – Descriptive and Comparative Analysis](#step-6--descriptive-and-comparative-analysis)
 
 ---
 
@@ -51,7 +51,7 @@
 
 - **Rationale:**
 
-  - A Boolean search in **Scopus** or **PubMed** using terms like **“autism” OR “autistic” OR “ASD”** (in the **title** or in the **abstract**) and **“AIMS-2-TRIALS” OR “777394”** (in **all fields**) is **insufficient**. These platforms do **not support full-text search**, which means they may overlook mentions of funding in crucial sections such as *Funding*, *Acknowledgements*, or *Conflicts of Interest*.
+  - A Boolean search in **Scopus** or **PubMed** using terms like **“autism” OR “autistic” OR “ASD”** (in the **title** or in the **abstract**) and **“AIMS-2-TRIALS” OR “777394”** (in **all fields**) is **insufficient**. These platforms do **not support full-text search**, which means they may overlook mentions of Aims-2-Trials support in crucial sections such as *Funding*, *Acknowledgements*.
 
   - **Google Scholar**, although broad in coverage, does **not support export of structured metadata** (e.g., `.bib` format), and **does not systematically provide DOIs**, making it unsuitable for systematic corpus construction and reproducibility.
 
@@ -59,7 +59,7 @@
   - The [**official AIMS-2-TRIALS Publications page**](https://www.aims-2-trials.eu/) is **used as a supplementary source**, but not prioritized. It does **not include DOIs**, and there is **no standardized export option**. Moreover, it contains:
     - Duplicate entries  
     - Broken links  
-    - Publications funded solely by **EU-AIMS** (the previous project), not **AIMS-2-TRIALS**
+    - Publications supported solely by **EU-AIMS** (the previous project), not **AIMS-2-TRIALS**
 
   - The **CORDIS** project page does provide **DOIs**, but similarly lacks export functionality for structured metadata.
 
@@ -130,39 +130,58 @@ It was created using the **Graphviz DOT language** and is [available in the repo
   - This step ensures topic relevance before proceeding to full-text eligibility review.
 
 ### Step 7 – Manual full-text screening (exclusion rules)  
-- **Objective:** Ensure that only articles that are directly relevant to autism and that clearly acknowledge funding from AIMS-2-TRIALS are included in the corpus.  
+- **Objective:** Ensure that only articles that are directly relevant to autism and that clearly acknowledge support from AIMS-2-TRIALS are included in the corpus.  
 - **Action:**  
   Exclude any entry that meets **one or more** of the following criteria:
 
   1. Mentions **“autism”, “autistic”, or “ASD”** in the abstract **but the article is not directly about autism**  
   2. Article language is **not English**  
   3. Entry is a **preprint** that has since been published in a peer-reviewed journal  
-  4. **AIMS-2-TRIALS** (or grant **777394**) is mentioned **only** in the body text or bibliography and **not** in a funding-related section (e.g. *Acknowledgements*, *Funding*, *Conflict of Interest (COI)*)  
+  4. **AIMS-2-TRIALS** (or grant **777394**) is mentioned **only** in the body text or bibliography and **not** in a support-related section (e.g. *Acknowledgements*, *Funding*)  
 
-### Step 8 – Detailed analysis of funding attribution  
-- **Objective:** Ensure that only publications explicitly funded by AIMS-2-TRIALS are retained in the corpus, based on strict and verifiable funding attribution criteria.  
-- **Action:**  
-  - For each remaining entry, perform a manual review of the **Funding**, **Acknowledgements**, and **Conflict of Interest (COI)** sections.  
-  - Determine whether the article explicitly states that **AIMS-2-TRIALS funded the research project or one or more of the authors**.  
-  - Apply the following inclusion/exclusion rules:
-    - If **AIMS-2-TRIALS** is explicitly mentioned in a **Funding** section as having funded the research or the authors, the entry is **included**.
-    - If the mention appears **only** in a non-funding section (e.g. *Acknowledgements*, *COI*), the entry is **excluded**, **unless** the publication is also listed on the [official AIMS-2-TRIALS Publications page](https://www.aims-2-trials.eu/).
-    - If the article uses the term **“support”** to refer to AIMS-2-TRIALS, interpret it as *financial* support **only** when it appears in a **Funding** section. If the word “support” appears only outside that context, cross-verification with the Publications page is required to retain the entry.
+### Step 8 – Support Attribution Check
+
+#### Objective  
+Ensure that the corpus contains **only publications explicitly supported by AIMS-2-TRIALS**, verified against clear and reproducible criteria.
+
+#### Action  
+1. **Read the entire full text** of each remaining article (not only the *Funding*, *Acknowledgements* or *Support* sections).  
+2. Identify every occurrence of **AIMS-2-TRIALS** or its grant number **777394**.  
+3. Decide whether the study meets the inclusion or exclusion criteria below.
 
 ---
 
-## Phase B – Corpus Verification (Funding Attribution)  
+#### Inclusion Criteria  
 
-> **Scope.** Phase B provides an *independent, blinded* check of every funding-attribution decision made during Phase A.  
+A study is retained when **all** of the following conditions are met:
+- The text makes an **explicit link** between AIMS-2-TRIALS and **this specific research** (e.g. *“supported by AIMS-2-TRIALS”*, *“funded by grant 777394”*, *“with the support of AIMS-2-TRIALS”*).  
+- AIMS-2-TRIALS is cited **by name** or through grant **777394**.  
+- A support statement appears anywhere in the article **and** fulfils at least one of these two cases:  
+  1. It is located in a **Funding** or **Acknowledgements** section; **or**  
+  2. It occurs elsewhere in the text but unambiguously states that the support applies to **this study**.
+
+---
+
+#### Exclusion Criteria  
+
+A study is discarded when **any** of the following apply:
+- The article refers solely to **EU-AIMS** and never to AIMS-2-TRIALS or grant 777394. 
+- AIMS-2-TRIALS is mentioned **only** in a **Conflict of Interest (COI)** or similar disclosure, with no indication that the support relates to the current research.
+
+---
+
+## Phase B – Corpus Verification (Support Attribution)  
+
+> **Scope.** Phase B provides an *independent, blinded* check of every support-attribution decision made during Phase A.  
 > Secondary reviewers see only the **article title** and the **sentence-level excerpt(s)** captured by the primary reviewer; they do **not** see the primary reviewer’s eligibility code.
 
 ---
 
 ### 1 · Preparatory extraction — First reviewer (Phase A recap)  
-- **Objective:** Capture transparent, citable evidence of AIMS-2-TRIALS funding/support for every record.  
+- **Objective:** Capture transparent, citable evidence of AIMS-2-TRIALS support for every record.  
 - **Action:**  
   - For **every entry** (even exclusions that mention only “support”), the primary reviewer records:  
-    1. The **sentence(s)** that contain the AIMS-2-TRIALS funding or support statement.  
+    1. The **sentence(s)** that contain the AIMS-2-TRIALS support statement.  
     2. The **section heading** in which that statement appears (e.g. *Funding*, *Acknowledgements*, *COI*).  
     3. A binary code (*AIMS-2-TRIALS support eligible? yes / no*).  
   - An auto-attribution script confirms linkage by matching the first ten words of the extracted sentence(s) against the article full text; discrepancies are flagged for manual review.
@@ -181,15 +200,17 @@ It was created using the **Graphviz DOT language** and is [available in the repo
 - **Objective:** Obtain an independent eligibility decision for **every** extracted passage.  
 - **Action:**  
   1. **Work allocation:** Each excerpt is assigned to exactly one certified secondary reviewer who did **not** participate in Phase A extraction, ensuring complete separation of roles.
-  2. **Blinded NocoDB form:** Secondary reviewers view only:  
-     - the **section heading**, and  
-     - the **extracted sentence(s)**.  
+  2. **Blinded AppSmith form:** Secondary reviewers view only:  
+     - the **section heading**,  
+     - the **extracted sentence(s)**,
+     - and, if anything is unclear, may reveal the **DOI** to consult the full text for clarification.
      The Phase-A eligibility code is hidden.  
   3. **Data captured:** Secondary reviewers enter:
-     - a binary judgment (*funded by AIMS-2-TRIALS? yes / no*), and  
-     - optional comments.  
+    - a judgment (*Supported by AIMS-2-TRIALS?* **yes / no / unsure**), and  
+    - an **optional comment** field—used only when **unsure** is selected.
+    
   4. **Agreement rule:**  
-      - **100 % concordance** is required between primary and secondary reviewers on the binary judgment (*funded by AIMS-2-TRIALS? yes / no*).  
+      - **100 % concordance** is required between primary and secondary reviewers on the judgment (*supported by AIMS-2-TRIALS? yes / no*).  
      - Any discordance, however minor, triggers the discrepancy-resolution pathway.
 
 ---
@@ -197,10 +218,9 @@ It was created using the **Graphviz DOT language** and is [available in the repo
 ### 4 · Resolution of discrepancies  
 - **Objective:** Resolve all disagreements so that the final corpus is error-free.  
 - **Action:**  
-  1. **Automated flagging:** NocoDB’s *Comparison* view automatically highlights every excerpt for which the eligibility attribution recorded by the **primary reviewer** and that of the **secondary reviewer** are not in 100 % concordance.
+  1. **Automated flagging:** AppSmith’s *Comparison* view automatically highlights every excerpt for which the eligibility attribution recorded by the **primary reviewer** and that of the **secondary reviewer** are not in 100 % concordance.
   2. **Consensus attempt:** Primary and secondary reviewers confer (asynchronously or live) to reach agreement.  
-  3. **Tertiary adjudication:** If consensus fails, a tertiary reviewer renders a binding decision and records a rationale.   
-  4. **Corpus lock:** The corpus is marked **Approved** only when every excerpt carries a unanimous eligibility label.
+  3. **Corpus lock:** The corpus is marked **Approved** only when every excerpt carries a unanimous eligibility label.
 
 ---
 
@@ -214,72 +234,101 @@ It was created using the **Graphviz DOT language** and is [available in the repo
 
 ## Phase C – Corpus Analysis Informed by GRIPP2-LF ##
 
-*(Performed by two **Primary coders** — **PC-1** and **PC-2** — assisted by a **Secondary coder** (**SC**) who carries out quality-control checks. Final arbitration by a **Third reviewer** if needed.)*  
+*(Coding will be carried out by **two independent teams**.  
+- Each team will include **one or more primary coders**, with the exact number determined by the **people available**.  
+- The **second team** will perform a quality-control review of the first team’s work.  
 
-### Step 1 – Develop the GRIPP2-LF coding framework  
-- **Objective:** Convert every GRIPP2-LF item into clear variables and decision rules.  
-- **Action:**  
-  1. Draft a coding template linking the **five GRIPP2-LF domains** (Aim, Methods, Study Results, Discussion, Reflections) to **item-level variables** (e.g., *“Aim of PPI stated?”* → Yes / No / Partially).  
-  2. Provide concrete examples and edge-case guidance for each item.  
-  3. Pilot the template on **three randomly chosen articles**; revise wording or categories if Primary coders disagree.
+### Step 1 –  Create a Custom AppSmith Form Integrating GRIPP2-LF Domains and Items from the BMJ Reference
+- **Objective**  
+  Build a dynamic AppSmith form that reproduces every domain and item of the **GRIPP2-LF long-form** (see **Table 1** in Staniszewska et al., 2017 – <https://www.bmj.com/content/358/bmj.j3453#T1>).
 
----
-
-### Step 2 – Joint calibration on a common subset  
-- **Objective:** Achieve acceptable inter-rater agreement before dividing the workload.  
-- **Action:**  
-  1. **PC-1** and **PC-2** independently code **10 % of the corpus**.  
-  2. Compute **Cohen’s κ** for every item.  
-  3. If overall κ ≥ 0.70 and no item falls below 0.60, proceed to Step 3.  
-  4. Otherwise, discuss disagreements, and repeat calibration on a *new* 5 % sample until the threshold is met.
+- **Actions**  
+  1. **Retrieve** the five GRIPP2-LF domains (*Aim, Methods, Study Results, Discussion, Reflections*) and each associated item exactly as listed in Table 1 of the BMJ article.  
+  2. **Create a form field** for every item, with the recommended response options (**Yes / No / Partially / Not applicable**) and an optional free-text comment box.  
+  3. **Group the fields** into collapsible panels—one panel per domain—to keep the interface compact and easy to navigate.  
+  4. **Pilot-test** the form on three randomly selected articles; refine wording, layout, or response options if coders encounter usability issues.
 
 ---
 
-### Step 3 – Workload division with single primary coding  
-- **Objective:** Code the remaining articles efficiently while preserving traceability.  
-- **Action:**  
-  1. Randomly split the **uncoded 90 %** of the corpus so that **PC-1** and **PC-2** each receive roughly half.  
-  2. Each Primary coder enters data through a custom web-form built with **NocoDB**; the form automatically captures coder ID, article ID, and timestamp and stores all records in a central database for later reconciliation.
-  3. Flag uncertainties with a standard comment field for later inspection.
+### Step 2 – Joint Calibration on a Common Subset
+- **Objective**  
+  Ensure consistent coding practices and sufficient agreement before proceeding with full-scale data extraction.
+- **Action**  
+  1. For each article selected for calibration, two people independently code the same content: one as **primary coder**, the other as **reviewer**.  
+  2. This calibration subset should represent approximately **10% of each coder's total assigned workload**.  
+  3. Inter-rater agreement is assessed for each GRIPP2-LF item using a suitable reliability measure (e.g., **Cohen’s kappa**).  
+  4. If the average agreement is acceptable (e.g., kappa ≥ 0.70 overall and no item < 0.60), the main coding phase begins.  
+  5. If agreement is insufficient, discrepancies are discussed, coding instructions are revised if needed, and calibration continues on a new 5% sample until thresholds are reached.
+
+> Coders may alternate roles between **primary coder** and **reviewer** depending on the article and study rotation.
 
 ---
 
-### Step 4 – Secondary quality-control coding  
-- **Objective:** Verify a representative subset of single-coded articles for accuracy.  
-- **Action:**  
-  1. **SC** draws a **stratified random 15 % sample** from *each* Primary coder’s batch.  
-  2. SC codes this sample independently using the same codebook.  
-  3. Compute κ between SC and the corresponding Primary coder.  
-  4. **If κ ≥ 0.70** for *both* primary batches, accept the coding as valid.  
-  5. **If κ < 0.70** for either batch:  
-     - Draw an **additional 15 % sample** from that batch.  
-     - SC re-codes; recalculate κ.  
-     - Repeat until κ ≥ 0.70 or the full batch has been double-coded.  
-  6. Document all disagreements; unresolved items go to the Third reviewer for final decision.
+### Step 3 – Workload Allocation for Primary Coding
+- **Objective**  
+  Code the remaining articles efficiently while maintaining complete traceability.
+- **Actions**  
+  1. **Randomly distribute** all articles **not used in calibration** so that each one is handled by a single primary coder (the number of coders depends on the people available).  
+  2. Primary coders enter their ratings through the custom **AppSmith form**, which automatically records:  
+     - coder ID,  
+     - article ID/DOI,
+     - timestamp.
+    - the **responses for every GRIPP2-LF domain and item**.
+     All entries are stored in a central **PostgreSQL database**.  
+  3. Any uncertainty is documented in the form’s **comment field**, allowing flagged cases to be reviewed in subsequent quality-control steps.
 
 ---
 
-### Step 5 – Consolidation and master dataset creation  
-- **Objective:** Produce a clean, consensus-level dataset ready for analysis.  
-- **Action:**  
-  1. Merge reconciled codes from Primary and Secondary coders into a **master file** (one row per article, one column per GRIPP2-LF variable).  
-  2. Append auxiliary variables (publication year, journal, study design, funding type) gathered in Phases A–B.  
-  3. Log any missing or indeterminate values with a standard reason code (e.g., “not reported”).
+### Step 4 – Secondary Quality-Control Coding
+
+#### Objective  
+Check the accuracy of single-coded articles and maintain inter-rater reliability throughout the project.
+#### Actions  
+1. The **quality-control team** draws a **stratified random sample** (≈ 15 %) from each primary coder’s batch.  
+2. Team members recode these articles independently, using the same GRIPP2-LF codebook and AppSmith form.  
+3. Compute inter-rater agreement (e.g., Cohen’s kappa) between each primary coder and the quality-control coding.  
+4. If average κ ≥ 0.70 and no item < 0.60 for every batch, accept the primary coding.  
+5. If thresholds are not met for a batch,  
+   - draw an **additional 15 % sample** from that batch,  
+   - recode, then recalculate κ;  
+   - repeat until κ ≥ 0.70 or the entire batch has been double-coded.  
+6. Log every disagreement; unresolved cases are escalated to an **arbitrating reviewer** for a final decision.
+
+> All QC data and agreement metrics are stored in the central PostgreSQL database for auditing and reporting purposes.
 
 ---
 
-### Step 6 – Descriptive and comparative analysis  
-- **Objective:** Quantify patterns of autistic-participation reporting and explore associations with study characteristics.  
-- **Action:**  
-  1. Calculate frequencies and proportions for each GRIPP2-LF item (e.g., % of studies stating a PPI aim).  
-  2. Generate cross-tabulations to explore patterns — for example,  
-   how often each GRIPP2-LF item is reported depending on the **year of publication**, the **type of study**, or the **type of funding**.
-  3. Visualise results with bar charts, heatmaps, or similar figures for the manuscript.  
-  4. Draft a narrative synthesis that complements the quantitative results by highlighting:
-    - **Common reporting gaps**: Identify GRIPP2-LF items that are most frequently missing or underreported across studies.
-    - **Illustrative examples**: Describe publications that provide relatively detailed reporting of autistic participation, noting the GRIPP2-LF domains covered and how they are addressed.
-    - **Observed patterns**: Examine how reporting practices differ by publication year, study design, or funding context, noting where certain GRIPP2-LF items appear more or less frequently.
-    - **Implications for future reporting**: Identify areas where reporting could be strengthened in future autism research publications.
+### Step 5 – Consolidation and Master Dataset Construction
+
+- **Objective**  
+  Compile a single, consensus-level dataset that is ready for statistical analysis.
+- **Actions**  
+  1. **Combine** all reconciled codes—after quality-control review and any arbitrator decisions—into one **master table** (one row per article, one column for each GRIPP2-LF item).  
+  2. **Append** contextual variables collected in earlier phases (e.g., publication year, journal title, study design, type of support).  
+  3. **Flag** any missing or indeterminate values with a standard reason code (e.g., *NR* for “not reported”) to preserve transparency.
+
+---
+
+### Step 6 – Descriptive and Comparative Analysis
+
+- **Objective**  
+  Quantify how autistic-participation is reported (via GRIPP2-LF items) and explore relationships with key study characteristics.
+
+- **Actions**  
+  1. **Compute basic frequencies and percentages** for every GRIPP2-LF item  
+     *(e.g., proportion of studies that explicitly state a PPI aim).*  
+  2. **Assess the level of participation** whenever the relevant GRIPP2-LF item is present, by mapping the reported activities onto an adapted version of **Arnstein’s (1969) Ladder of Participation** for autism research.  
+     - Classify each study along the ladder’s rungs (e.g., consultation, partnership, co-leadership).  
+  3. **Cross-tabulate** both GRIPP2-LF items **and** ladder categories against variables such as:  
+     - **Publication year**  
+     - **Study design**  
+     - **Type of support**  
+  4. **Visualise the results** using bar charts, heat-maps, or similar graphics suitable for the manuscript.  
+  5. **Draft a narrative synthesis** to accompany the quantitative findings, highlighting:  
+     - **Common reporting gaps** – items most often missing or under-reported.  
+     - **Illustrative examples** – studies with detailed descriptions of autistic participation and their ladder positions.  
+     - **Observed patterns** – variations by year, design, or support context.  
+     - **Implications for future work** – recommendations for strengthening autistic-participation reporting.
 
 ---
 
