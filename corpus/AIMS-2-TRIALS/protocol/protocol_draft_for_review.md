@@ -78,7 +78,7 @@ This prioritization ensures that the resulting corpus is robust, reproducible, a
 This diagram visualizes **Phase A – Corpus-Building** (see below) using a PRISMA-style flow.  
 It was created using the **Graphviz DOT language** and is [available in the repository](./prisma_diagram/prisma_diagram.dot).
 
-![PRISMA Flow Diagram (Draft 0.5)](prisma_diagram/prisma_diagram_v0.5.svg)
+![PRISMA Flow Diagram (Draft 0.6)](prisma_diagram/prisma_diagram_v0.6.svg)
 
 ---
 
