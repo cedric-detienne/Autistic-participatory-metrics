@@ -134,7 +134,7 @@ It was created using the **Graphviz DOT language** and is [available in the repo
 - **Action:**  
 #### Exclusion Criteria  
 Exclude any record that meets **one or more** of the following conditions:
-  1. The record is **not a peer-reviewed research article** (i.e., an original empirical study, systematic review, or meta-analysis); therefore we exclude abstract-only entries without full text, corrigenda/corrections, books, thesis, editorials, perspective or opinion pieces, letters to the editor, and any other non-empirical content.
+  1. The record is **not a peer-reviewed research article** (i.e., an original empirical study, protocol, systematic review, or meta-analysis); therefore we exclude abstract-only entries without full text, corrigenda/corrections, books, thesis, editorials, perspective or opinion pieces, letters to the editor, and any other non-empirical content.
   2. The abstract mentions **“autism”, “autistic”, or “ASD”** but the article itself is **not directly about autism**.  
   3. The record is a **preprint** that has since been published in a peer-reviewed journal (the peer-reviewed version will be used instead).  
   4. **AIMS-2-TRIALS** (or grant **777394**) is **not cited anywhere** in the article.  
