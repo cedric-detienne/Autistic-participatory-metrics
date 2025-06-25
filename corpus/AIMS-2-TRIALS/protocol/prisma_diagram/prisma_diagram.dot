@@ -1,29 +1,33 @@
+/* TIPS ── How to export this .dot file as SVG ────────────────────────────────
+   dot -Tsvg prisma_diagram.dot -o prisma_diagram.svg
+*/
+
 digraph PRISMA2020 {
   /* ── Global settings ─────────────────────────────────────────────── */
   rankdir = TB
   labelloc = "t"
-  label = "PRISMA Flow Diagram (Draft 0.5)"
+  label = "PRISMA Flow Diagram (Draft 0.6)"
   fontsize = 16
   fontname = "Helvetica-Bold"
 
-  nodesep = 0.5
+  nodesep = 0.7
   ranksep = 0.35
 
-  node [shape=box, fontname="Helvetica", fontsize=10, style=filled, width=2.8, fixedsize=true, height=1.2]
+  node [shape=box, fontname="Helvetica", fontsize=10, style=filled, width=3.5, fixedsize=true, height=1.2]
   edge [color=gray40]
 
   /* ── Main flow nodes (green) ─────────────────────────────────────── */
-  R1  [label="Records identified from:\l- Dimensions (n = …)\l- Europe PMC (n = …)\l- A2T Website (n = …)\l- Cordis Website (n = …)\l", fillcolor="#fff8e1", color="#fbc02d"];
+  R1  [label="Records identified from:\l- Dimensions (n = …)\l- Europe PMC (n = …)\l- Aims-2-Trials Website (n = …)\l- Cordis Website (n = …)\l", fillcolor="#fff8e1", color="#fbc02d"];
   R2  [label="Records after duplicates removed\n(n = …)",                    fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
   R3  [label="Full‑text reports assessed for eligibility\n(n = …)",          fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
-  R4  [label="Reports reviewed for funding attribution\n(n = …)",                   fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
+  R4  [label="Reports reviewed for support attribution\n(n = …)",                   fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
   R5  [label="Articles included in review\n(n = …)",                         fillcolor="#e8f5e9", color="#2e7d32", fontcolor="#1b5e20"];
 
   /* ── Exclusion blocks (red) ──────────────────────────────────────── */
   X1 [label="Duplicates removed (n = …)\l",                                       fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
   X2 [label="Excluded:\l- No autism terms in title/abstract (n = …)\l",          fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
-  X3 [label="Excluded:\l- Duplicate preprint/published (n = …)\l- Not autism‑related (n = …)\l- Not English (n = …)\l- Full text unavailable (n = …)\l- Research summary only (n = …)\l", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
-  X4 [label="Excluded:\l- A2T not mentioned (n = …)\l- A2T mentioned only in text/refs (n = …)\l- A2T funding unclear (n = …)\l", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
+  X3 [label="Excluded:\l- Duplicate preprint/published (n = …)\l- Not autism-related (n = …)\l- Full text unavailable (n = …)\l- Research summary only (n = …)\l- Non-research article (n = …)\l", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
+  X4 [label="Excluded:\l- Aims-2-Trials not mentioned (n = …)\l- Aims-2-Trials mentioned only in text/refs (n = …)\l- Aims-2-Trials mentioned only in COI (n = …)\l- Aims-2-Trials support unclear (n = …)\l", fillcolor="#ffebee", color="#c62828", fontcolor="#b71c1c"];
 
   /* ── Phase labels (blue, plaintext) ─────────────────────────────── */
   node [shape=plaintext, fontname="Helvetica", fontsize=12,
