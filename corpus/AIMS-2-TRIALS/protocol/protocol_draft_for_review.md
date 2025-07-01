@@ -38,7 +38,9 @@
   - [Step 3 – Workload Allocation for Primary Coding](#step-3--workload-allocation-for-primary-coding)
   - [Step 4 – Secondary Quality-Control Coding](#step-4--secondary-quality-control-coding)
   - [Step 5 – Consolidation and Master Dataset Construction](#step-5--consolidation-and-master-dataset-construction)
-  - [Step 6 – Descriptive and Comparative Analysis](#step-6--descriptive-and-comparative-analysis)
+
+- [Phase D – Descriptive and Comparative Analysis](#phase-d--descriptive-and-comparative-analysis)
+
 
 ---
 
@@ -310,7 +312,7 @@ Check the accuracy of single-coded articles and maintain inter-rater reliability
 
 ---
 
-### Step 6 – Descriptive and Comparative Analysis
+### Phase D – Descriptive and Comparative Analysis
 
 - **Objective**  
   Quantify how autistic-participation is reported (via GRIPP2-LF items) and explore relationships with key study characteristics.
