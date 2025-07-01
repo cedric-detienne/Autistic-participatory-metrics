@@ -56,7 +56,7 @@ To explore methods to:
 
 ## Application to Research Corpora
 
-The first case study focuses on **peer-reviewed publications** stemming from research funded by the [AIMS-2-TRIALS](docs/case-studies/AIMS-2-TRIALS/aims_2_trials_overview.md) European consortium. These publications constitute the initial corpus through which the *reporting* of participatory practices in autism research will be examined, using a structured framework based on the *GRIPP2-LF* checklist.
+The first case study focuses on **peer-reviewed publications** stemming from research supported by the [AIMS-2-TRIALS](docs/case-studies/AIMS-2-TRIALS/aims_2_trials_overview.md) European consortium. These publications constitute the initial corpus through which the *reporting* of participatory practices in autism research will be examined, using a structured framework based on the *GRIPP2-LF* checklist.
 
 The project is currently in the phase of developing a methodological protocol. A draft is available for consultation: [protocol_draft_for_review.md](corpus/AIMS-2-TRIALS/protocol/protocol_draft_for_review.md).
 
