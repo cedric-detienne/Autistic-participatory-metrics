@@ -62,6 +62,11 @@ The project is currently in the phase of developing a methodological protocol. A
 
 The evaluation is conducted entirely independently from the consortium, on a voluntary basis by individuals organizing through Discord. Anyone interested in contributing is welcome to join.
 
+The project is structured into multiple phases. A proposed timeline has been published to help guide collective involvement and ensure sustainability over time.
+
+![Project Timeline](https://github.com/cedric-detienne/Autistic-participatory-metrics/raw/main/corpus/AIMS-2-TRIALS/protocol/timeline_diagram/timeline_diagram_v.01.png)
+
+
 ## License and Contribution
 
 All tools, indicators, and analyses are developed independently and non-commercially. No conflicts of interest apply. 
