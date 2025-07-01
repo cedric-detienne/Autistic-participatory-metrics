@@ -312,7 +312,7 @@ Check the accuracy of single-coded articles and maintain inter-rater reliability
 
 ---
 
-### Phase D – Descriptive and Comparative Analysis
+## Phase D – Descriptive and Comparative Analysis
 
 - **Objective**  
   Quantify how autistic-participation is reported (via GRIPP2-LF items) and explore relationships with key study characteristics.
